@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/voungv7340.dothome.co.kr/shop/static/css/main.98977b00.css",
-    "main.js": "/voungv7340.dothome.co.kr/shop/static/js/main.07f92dd4.js",
-    "static/js/787.23170c61.chunk.js": "/voungv7340.dothome.co.kr/shop/static/js/787.23170c61.chunk.js",
-    "static/media/nature-ge11690eb8_1920.jpg": "/voungv7340.dothome.co.kr/shop/static/media/nature-ge11690eb8_1920.db1a7844da6c60b8853e.jpg",
-    "index.html": "/voungv7340.dothome.co.kr/shop/index.html",
-    "main.98977b00.css.map": "/voungv7340.dothome.co.kr/shop/static/css/main.98977b00.css.map",
-    "main.07f92dd4.js.map": "/voungv7340.dothome.co.kr/shop/static/js/main.07f92dd4.js.map",
-    "787.23170c61.chunk.js.map": "/voungv7340.dothome.co.kr/shop/static/js/787.23170c61.chunk.js.map"
+    "main.css": "/static/css/main.68c81138.css",
+    "main.js": "/static/js/main.64a7eda6.js",
+    "static/js/787.f587e8d5.chunk.js": "/static/js/787.f587e8d5.chunk.js",
+    "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/index.html",
+    "main.68c81138.css.map": "/static/css/main.68c81138.css.map",
+    "main.64a7eda6.js.map": "/static/js/main.64a7eda6.js.map",
+    "787.f587e8d5.chunk.js.map": "/static/js/787.f587e8d5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.98977b00.css",
-    "static/js/main.07f92dd4.js"
+    "static/css/main.68c81138.css",
+    "static/js/main.64a7eda6.js"
   ]
 }
