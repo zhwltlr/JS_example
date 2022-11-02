@@ -15,7 +15,7 @@ function Loginjiyoung() {
   };
   const inputEnter = e => {
     if (e.code === 'Enter') {
-      navigate('/main');
+      navigate('/main-jiyoung');
     }
   };
 
@@ -44,7 +44,7 @@ function Loginjiyoung() {
             <button
               onClick={() => {
                 validator
-                  ? navigate('/main')
+                  ? navigate('/main-jiyoung')
                   : alert('아이디와 비밀번호를 확인해주세요');
               }}
               className="loginBtn"
