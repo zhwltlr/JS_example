@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import './Mainjiyoung.scss';
 import Comment from './Comment';
+import SearchId from './SearchId';
 
 function Mainjiyoung() {
   const [comment, setComment] = useState('');
   const [commentArr, setCommentArr] = useState([]);
-  const [red, setRed] = useState(false);
+  const [searchInput, setSearchInput] = useState('');
+  const [turnRed, setTurnRed] = useState(false);
 
   const newComment = e => {
     setComment(e.target.value);
@@ -21,8 +23,7 @@ function Mainjiyoung() {
       pushComment();
     }
   };
-
-  // 댓글 달기
+  // 댓글 구현 (컴포넌트 전)
   const showComment = commentArr.map(function (el, i) {
     return (
       <div key={i} className="comments">
@@ -47,7 +48,19 @@ function Mainjiyoung() {
                 alt="search"
                 className="searchImg"
               />
-              <input type="text" placeholder="search" id="searchInput" />
+              <input
+                type="text"
+                placeholder="search"
+                id="searchInput"
+                onChange={e => {
+                  setSearchInput(e.target.value);
+                }}
+              />
+              {searchInput.length > 0 && (
+                <div className="filterBox">
+                  <SearchId searchInput={searchInput} />
+                </div>
+              )}
             </div>
             <div className="navIcon">
               <img src="/images/img.jiyoungpark/explore.png" alt="explore" />
@@ -155,12 +168,13 @@ function Mainjiyoung() {
                     <span>zhwltlr</span>
                     오늘도 좋은 하루~~^^
                   </p>
+                  {/* 컴포넌트 전 */}
                   {/* {showComment} */}
                   <Comment
                     commentArr={commentArr}
                     setCommentArr={setCommentArr}
-                    red={red}
-                    setRed={setRed}
+                    turnRed={turnRed}
+                    setTurnRed={setTurnRed}
                   />
                   <div className="newComments" />
                 </div>

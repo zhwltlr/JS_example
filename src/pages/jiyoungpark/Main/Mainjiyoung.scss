@@ -391,252 +391,166 @@ main {
         }
       }
     }
-  }
-}
 
-// mainRight
-.mainRight {
-  @include flex(normal, space-around);
-  width: 32%;
-  flex-direction: column;
-  margin-top: 50px;
+    // mainRight
+    .mainRight {
+      @include flex(normal, space-around);
+      width: 32%;
+      flex-direction: column;
+      margin-top: 50px;
 
-  .profileInfo {
-    margin: 0;
-    margin-bottom: 16px;
+      .profileInfo {
+        margin: 0;
+        margin-bottom: 16px;
 
-    .user {
-      @include flex(space-between, center);
-      width: 170px;
+        .user {
+          @include flex(space-between, center);
+          width: 170px;
 
-      .profilePic {
-        @include profileSize(65px, 65px, 0px, #fff);
+          .profilePic {
+            @include profileSize(65px, 65px, 0px, #fff);
 
-        img {
-          width: 65px;
-          height: 65px;
-          border: none;
-          object-fit: cover;
-          border-radius: 50%;
+            img {
+              width: 65px;
+              height: 65px;
+              border: none;
+              object-fit: cover;
+              border-radius: 50%;
+            }
+          }
+
+          .userStatus {
+            display: flex;
+            flex-direction: column;
+
+            .username {
+              font-size: 1.6rem;
+              line-height: 20px;
+              font-weight: 700;
+            }
+
+            .userMessage {
+              font-size: 1.4rem;
+              line-height: 14px;
+              font-weight: 500;
+            }
+          }
         }
       }
 
-      .userStatus {
-        display: flex;
-        flex-direction: column;
+      .storyBox,
+      .recommend {
+        width: 100%;
+        padding: 10px 0;
+        border: 1px solid $mainBorder;
+        border-radius: 5px;
+        margin-bottom: 15px;
+        background-color: #fff;
 
-        .username {
-          font-size: 1.6rem;
-          line-height: 20px;
-          font-weight: 700;
+        .innerTitle {
+          @include flex(space-between, center);
+          width: 90%;
+          height: 30px;
+          margin: 0 auto;
+
+          h2 {
+            color: #8e8e8e;
+            font-size: 1.4rem;
+            line-height: 14px;
+          }
+
+          span {
+            font-size: 1.2rem;
+            line-height: 12px;
+          }
         }
 
-        .userMessage {
-          font-size: 1.4rem;
-          line-height: 14px;
-          font-weight: 500;
+        .rightBox {
+          width: 90%;
+          margin: 8px auto;
+          height: 188px;
+          overflow-y: scroll;
+
+          &::-webkit-scrollbar {
+            width: 8px;
+          }
+
+          &::-webkit-scrollbar-thumb {
+            height: 30%;
+            background: #fff;
+            border-radius: 10px;
+          }
+
+          &::-webkit-scrollbar-track {
+            background: #fff;
+          }
+
+          .user {
+            @include flex(felx-start, center);
+            margin-bottom: 8px;
+
+            .profilePic {
+              @include profileSize(
+                41px,
+                41px,
+                2px,
+                linear-gradient(45deg, rgb(255, 230, 0), rgb(255, 0, 128) 80%)
+              );
+              border-radius: 50%;
+
+              img {
+                width: 100%;
+                height: 100%;
+                border: 2px solid #fff;
+                border-radius: 50%;
+                object-fit: cover;
+              }
+            }
+
+            .userStatus {
+              display: flex;
+              flex-direction: column;
+              margin-left: 7px;
+
+              .username {
+                font-size: 1.4rem;
+                font-weight: 700;
+                line-height: 16px;
+              }
+
+              .userMessage {
+                color: #8e8e8e;
+                font-size: 1.2rem;
+                line-height: 18px;
+              }
+            }
+          }
         }
       }
-    }
-  }
 
-  .storyBox,
-  .recommend {
-    width: 100%;
-    padding: 10px 0;
-    border: 1px solid $mainBorder;
-    border-radius: 5px;
-    margin-bottom: 15px;
-    background-color: #fff;
+      .recommend .rightBox .user {
+        @include flex(space-between, center);
 
-    .innerTitle {
-      @include flex(space-between, center);
-      width: 90%;
-      height: 30px;
-      margin: 0 auto;
-
-      h2 {
-        color: #8e8e8e;
-        font-size: 1.4rem;
-        line-height: 14px;
-      }
-
-      span {
-        font-size: 1.2rem;
-        line-height: 12px;
-      }
-    }
-
-    .rightBox {
-      width: 90%;
-      margin: 8px auto;
-      height: 188px;
-      overflow-y: scroll;
-
-      &::-webkit-scrollbar {
-        width: 8px;
-      }
-
-      &::-webkit-scrollbar-thumb {
-        height: 30%;
-        background: #fff;
-        border-radius: 10px;
-      }
-
-      &::-webkit-scrollbar-track {
-        background: #fff;
-      }
-
-      .user {
-        @include flex(felx-start, center);
-        margin-bottom: 8px;
+        .follow {
+          margin-left: auto;
+          font-size: 1.2rem;
+          line-height: 12px;
+          color: #0095f7;
+        }
 
         .profilePic {
-          @include profileSize(
-            41px,
-            41px,
-            2px,
-            linear-gradient(45deg, rgb(255, 230, 0), rgb(255, 0, 128) 80%)
-          );
-          border-radius: 50%;
+          background: none;
 
           img {
-            width: 100%;
-            height: 100%;
-            border: 2px solid #fff;
-            border-radius: 50%;
-            object-fit: cover;
+            border: none;
           }
         }
-
-        .userStatus {
-          display: flex;
-          flex-direction: column;
+        p,
+        span {
           margin-left: 7px;
-
-          .username {
-            font-size: 1.4rem;
-            font-weight: 700;
-            line-height: 16px;
-          }
-
-          .userMessage {
-            color: #8e8e8e;
-            font-size: 1.2rem;
-            line-height: 18px;
-          }
+          line-height: 16px;
         }
       }
     }
-  }
-}
-
-.mainRight .recommend .rightBox .user {
-  @include flex(space-between, center);
-
-  .follow {
-    margin-left: auto;
-    font-size: 1.2rem;
-    line-height: 12px;
-    color: #0095f7;
-  }
-
-  .profilePic {
-    background: none;
-
-    img {
-      border: none;
-    }
-  }
-  p,
-  span {
-    margin-left: 7px;
-    line-height: 16px;
-  }
-}
-
-/* 1024 */
-@media screen and (max-width: 1024px) {
-  .navContent {
-    width: 700px;
-  }
-
-  .wrap {
-    width: 750px;
-  }
-
-  .feeds {
-    width: 64%;
-  }
-
-  .mainImg {
-    height: 450px;
-  }
-}
-
-/* 768 */
-@media screen and (max-width: 768px) {
-  .navInner {
-    justify-content: center;
-  }
-
-  .logoBox {
-    width: 150px;
-    justify-content: center;
-  }
-
-  .navContent {
-    display: block;
-    width: 200px;
-    margin: 0 auto;
-    padding-top: 20px;
-  }
-
-  .navIcon {
-    display: none;
-  }
-
-  .searchBox {
-    display: none;
-
-    .mainLogo {
-      font-size: 2.6rem;
-      line-height: 26px;
-    }
-  }
-
-  .wrap {
-    width: 500px;
-  }
-
-  .feeds {
-    display: block;
-    width: 500px;
-    margin: 0 auto;
-  }
-
-  .post {
-    margin-top: 20px;
-  }
-
-  .profileInfo {
-    height: 50px;
-  }
-
-  .profileInfo > img {
-    height: 20px;
-  }
-
-  .mainRight {
-    display: none;
-  }
-
-  .profilePic {
-    width: 30px;
-    height: 30px;
-  }
-
-  .profilePic img {
-    border: 1px solid #fff;
   }
 }

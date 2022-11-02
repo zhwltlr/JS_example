@@ -8,10 +8,10 @@ const Comment = props => {
         {el}
         <img
           onClick={() => {
-            props.setRed(!props.red);
+            props.setTurnRed(!props.turnRed);
           }}
           src={
-            props.red === false
+            props.turnRed === false
               ? '/images/img.jiyoungpark/heart.png'
               : '/images/img.jiyoungpark/redheart.png'
           }
