@@ -1,7 +1,7 @@
 import React from 'react';
 
-function Nav() {
+function Maindabin() {
   return <p>Hello world</p>;
 }
 
-export default Nav;
+export default Maindabin;

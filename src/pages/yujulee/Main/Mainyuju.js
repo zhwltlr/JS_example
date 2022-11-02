@@ -1,7 +1,7 @@
 import React from 'react';
 
-function Nav() {
+function Mainyuju() {
   return <p>Hello world</p>;
 }
 
-export default Nav;
+export default Mainyuju;
