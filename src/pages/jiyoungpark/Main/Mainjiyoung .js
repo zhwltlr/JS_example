@@ -7,7 +7,6 @@ function Mainjiyoung() {
   const [comment, setComment] = useState('');
   const [commentArr, setCommentArr] = useState([]);
   const [searchInput, setSearchInput] = useState('');
-  const [turnRed, setTurnRed] = useState(false);
 
   const newComment = e => {
     setComment(e.target.value);
@@ -32,6 +31,13 @@ function Mainjiyoung() {
       </div>
     );
   });
+
+  // 댓글 삭제
+  const handleDelete = i => () => {
+    let copy = [...commentArr];
+    copy.splice(i, 1);
+    setCommentArr(copy);
+  };
 
   return (
     <>
@@ -170,12 +176,13 @@ function Mainjiyoung() {
                   </p>
                   {/* 컴포넌트 전 */}
                   {/* {showComment} */}
-                  <Comment
-                    commentArr={commentArr}
-                    setCommentArr={setCommentArr}
-                    turnRed={turnRed}
-                    setTurnRed={setTurnRed}
-                  />
+                  {commentArr.map((comment, i) => (
+                    <Comment
+                      key={i}
+                      comment={comment}
+                      onDelete={handleDelete(i)}
+                    />
+                  ))}
                   <div className="newComments" />
                 </div>
                 <p className="postDate">42분 전</p>
