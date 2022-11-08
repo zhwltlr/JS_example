@@ -221,7 +221,7 @@ main {
               img {
                 width: 100%;
                 height: 100%;
-                border: 2px solid #fff;
+                border: 3px solid #fff;
                 border-radius: 50%;
                 object-fit: cover;
               }
@@ -286,8 +286,8 @@ main {
             line-height: 14px;
 
             .user {
-              width: 100px;
-              @include flex(space-between, center);
+              // width: 100px;
+              @include flex(flex-start, center);
             }
 
             .profilePic {
@@ -304,6 +304,7 @@ main {
               font-size: 1.4rem;
               font-weight: 700;
               line-height: 14px;
+              margin-left: 7px;
             }
 
             p {
@@ -342,7 +343,7 @@ main {
 
           .postDate {
             margin: 15px 0;
-            font-size: 1rem;
+            font-size: 1.2rem;
             line-height: 10px;
           }
 
@@ -394,7 +395,7 @@ main {
 
     // mainRight
     .mainRight {
-      @include flex(normal, space-around);
+      @include flex(normal, flex-start);
       width: 32%;
       flex-direction: column;
       margin-top: 50px;
@@ -549,6 +550,22 @@ main {
         span {
           margin-left: 7px;
           line-height: 16px;
+        }
+      }
+
+      aside {
+        width: 100%;
+        font-size: 1.2rem;
+        line-height: 18px;
+        color: #8e8e8e;
+
+        ul {
+          display: flex;
+          flex-wrap: wrap;
+
+          li {
+            margin-right: 1px;
+          }
         }
       }
     }

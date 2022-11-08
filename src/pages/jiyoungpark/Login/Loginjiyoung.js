@@ -1,26 +1,28 @@
-import './Loginjiyoung.scss';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import './Loginjiyoung.scss';
 
 function Loginjiyoung() {
   const navigate = useNavigate();
-  const [idValue, setIdValue] = useState('');
-  const [pwValue, setPwValue] = useState('');
+  const [inputValue, setInputValue] = useState({
+    id: '',
+    pw: '',
+  });
 
-  const saveUserId = e => {
-    setIdValue(e.target.value);
-  };
-  const saveUserPw = e => {
-    setPwValue(e.target.value);
+  const handleInput = e => {
+    const { name, value } = e.target;
+    setInputValue({ ...inputValue, [name]: value });
   };
   const inputEnter = e => {
     if (e.code === 'Enter') {
       navigate('/main-jiyoung');
     }
   };
-
   const validator =
-    idValue && idValue.includes('@') && pwValue && pwValue.length >= 5;
+    inputValue.id &&
+    inputValue.id.includes('@') &&
+    inputValue.pw &&
+    inputValue.pw.length >= 5;
 
   return (
     <main className="login">
@@ -29,16 +31,16 @@ function Loginjiyoung() {
           <div className="loginLogo">westagram</div>
           <form>
             <input
-              onChange={saveUserId}
+              onChange={handleInput}
               type="text"
-              name="idInput"
+              name="id"
               placeholder="전화번호, 사용자 이름 또는 이메일"
             />
             <input
-              onChange={saveUserPw}
+              onChange={handleInput}
               onKeyDown={inputEnter}
               type="password"
-              name="pwInput"
+              name="pw"
               placeholder="비밀번호"
             />
             <button

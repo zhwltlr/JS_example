@@ -1,43 +1,11 @@
 import { useState } from 'react';
-import './Mainjiyoung.scss';
-import Comment from './Comment';
 import SearchId from './SearchId';
+import FeedList from './FeedList';
+import ASIDE_LIST from './data';
+import './Mainjiyoung.scss';
 
 function Mainjiyoung() {
-  const [comment, setComment] = useState('');
-  const [commentArr, setCommentArr] = useState([]);
   const [searchInput, setSearchInput] = useState('');
-
-  const newComment = e => {
-    setComment(e.target.value);
-  };
-  const pushComment = () => {
-    let copyComment = [...commentArr];
-    copyComment.push(comment);
-    setCommentArr(copyComment);
-    setComment('');
-  };
-  const commentEnter = e => {
-    if (e.code === 'Enter') {
-      pushComment();
-    }
-  };
-  // 댓글 구현 (컴포넌트 전)
-  const showComment = commentArr.map(function (el, i) {
-    return (
-      <div key={i} className="comments">
-        <span>jyp_0808</span>
-        {el}
-      </div>
-    );
-  });
-
-  // 댓글 삭제
-  const handleDelete = i => () => {
-    let copy = [...commentArr];
-    copy.splice(i, 1);
-    setCommentArr(copy);
-  };
 
   return (
     <>
@@ -113,103 +81,8 @@ function Mainjiyoung() {
       <main>
         <div className="wrap">
           <div className="feeds">
-            <article className="post">
-              <div className="profileInfo">
-                <div className="user">
-                  <div className="profilePic">
-                    <img
-                      src="/images/img.jiyoungpark/zhwltlr.png"
-                      alt="profileImg"
-                    />
-                  </div>
-                  <p className="username">zhwltlr</p>
-                </div>
-                <img src="/images/img.jiyoungpark/option.png" alt="option" />
-              </div>
-              <img
-                src="/images/img.jiyoungpark/hous.jpg"
-                alt="mainImg"
-                className="mainImg"
-              />
-              <div className="postContent">
-                <div className="postIcons">
-                  <ul>
-                    <li>
-                      <img
-                        src="/images/img.jiyoungpark/heart.png"
-                        alt="heart"
-                      />
-                    </li>
-                    <li>
-                      <img src="/images/img.jiyoungpark/chat.png" alt="chat" />
-                    </li>
-                    <li>
-                      <img
-                        src="/images/img.jiyoungpark/upload.png"
-                        alt="upload"
-                      />
-                    </li>
-                    <li className="postSave">
-                      <img
-                        src="/images/img.jiyoungpark/save-instagram.png"
-                        alt="save"
-                      />
-                    </li>
-                  </ul>
-                </div>
-                <div className="likes">
-                  <div className="user">
-                    <div className="profilePic">
-                      <img
-                        src="/images/img.jiyoungpark/flower.jpg"
-                        alt="profileImg"
-                      />
-                    </div>
-                    <span className="username">jyp_0808</span>
-                  </div>
-                  <p>님 외에 10명이 좋아합니다.</p>
-                </div>
-                <div className="postTextBox">
-                  <p className="postText text">
-                    <span>zhwltlr</span>
-                    오늘도 좋은 하루~~^^
-                  </p>
-                  {/* 컴포넌트 전 */}
-                  {/* {showComment} */}
-                  {commentArr.map((comment, i) => (
-                    <Comment
-                      key={i}
-                      comment={comment}
-                      onDelete={handleDelete(i)}
-                    />
-                  ))}
-                  <div className="newComments" />
-                </div>
-                <p className="postDate">42분 전</p>
-              </div>
-              <div className="commentBox">
-                <img src="/images/img.jiyoungpark/smile.png" alt="smile" />
-                <div className="newComments">
-                  <input
-                    type="text"
-                    id="commentAdd"
-                    placeholder="댓글 달기..."
-                    onChange={newComment}
-                    onKeyDown={commentEnter}
-                    value={comment}
-                  />
-                  <button
-                    type="submit"
-                    className="postBtn"
-                    onClick={pushComment}
-                  >
-                    게시
-                  </button>
-                </div>
-              </div>
-            </article>
+            <FeedList />
           </div>
-          {/* <!--feeds --> */}
 
           {/* <!-- mainRight --> */}
           <div className="mainRight">
@@ -376,6 +249,13 @@ function Mainjiyoung() {
               </div>
             </div>
             {/* <!--recommend --> */}
+            <aside>
+              <ul>
+                {ASIDE_LIST.map(el => {
+                  return <li key={el.id}>{el.text}•</li>;
+                })}
+              </ul>
+            </aside>
           </div>
           {/* <!--mainRight --> */}
         </div>
