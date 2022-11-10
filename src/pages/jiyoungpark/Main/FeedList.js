@@ -11,9 +11,7 @@ const FeedList = () => {
       .then(response => response.json())
       .then(result => setFeedData(result));
   }, []);
-  return feedData.map((feedinfo, i) => {
-    return <Feed key={i} feedinfo={feedinfo} />;
-  });
+  return feedData.map((feedinfo, i) => <Feed key={i} feedinfo={feedinfo} />);
 };
 
 export default FeedList;

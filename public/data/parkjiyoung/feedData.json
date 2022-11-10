@@ -53,5 +53,38 @@
     "likeuser": "zhwltlr",
     "likeuserimg": "/images/img.jiyoungpark/zhwltlr.png",
     "likenum": "28"
+  },
+  {
+    "id": 6,
+    "username": "jyinfo_dog",
+    "profileimg": "/images/img.jiyoungpark/dog.jpg",
+    "mainimg": "/images/img.jiyoungpark/mask.jpg",
+    "text": "요즘 미세먼지가 심하니 다들 조심...^^",
+    "postdate": "17시간 전",
+    "likeuser": "jyp_0808",
+    "likeuserimg": "/images/img.jiyoungpark/flower.jpg",
+    "likenum": "36"
+  },
+  {
+    "id": 7,
+    "username": "jyfav_itzy",
+    "profileimg": "/images/img.jiyoungpark/itzy.jpg",
+    "mainimg": "/images/img.jiyoungpark/concert.jpg",
+    "text": "연말 콘서트 한 번 가보고 싶다...",
+    "postdate": "11시간 전",
+    "likeuser": "jyinfo_movie",
+    "likeuserimg": "/images/img.jiyoungpark/movie.jpg",
+    "likenum": "212"
+  },
+  {
+    "id": 8,
+    "username": "jyfav_conan",
+    "profileimg": "/images/img.jiyoungpark/detective.png",
+    "mainimg": "/images/img.jiyoungpark/climbing.jpg",
+    "text": "오랜만에 클라이밍 했는데 여전히 좋다!!",
+    "postdate": "7시간 전",
+    "likeuser": "zheldwoddl",
+    "likeuserimg": "/images/img.jiyoungpark/hous.jpg",
+    "likenum": "36"
   }
 ]

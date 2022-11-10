@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import SearchId from './SearchId';
 import FeedList from './FeedList';
+import SearchId from './SearchId';
 import ASIDE_LIST from './data';
 import './Mainjiyoung.scss';
 
@@ -30,11 +30,7 @@ function Mainjiyoung() {
                   setSearchInput(e.target.value);
                 }}
               />
-              {searchInput.length > 0 && (
-                <div className="filterBox">
-                  <SearchId searchInput={searchInput} />
-                </div>
-              )}
+              <SearchId searchInput={searchInput} />
             </div>
             <div className="navIcon">
               <img src="/images/img.jiyoungpark/explore.png" alt="explore" />

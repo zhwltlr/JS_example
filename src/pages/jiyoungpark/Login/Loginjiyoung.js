@@ -9,15 +9,46 @@ function Loginjiyoung() {
     pw: '',
   });
 
+  const singIn = () => {
+    fetch('http://10.58.52.105:3000/auth/signin', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+      },
+      body: JSON.stringify({
+        email: inputValue.id,
+        password: inputValue.pw,
+      }),
+    })
+      .then(response => {
+        if (response.ok === true) {
+          return response.json();
+        }
+        throw new Error('에러 발생!');
+      })
+      .catch(error => alert('로그인 실패'))
+      .then(data => {
+        if (data.accessToken) {
+          localStorage.setItem('TOKEN', data.accessToken);
+          alert('로그인 성공');
+          navigate('/main-jiyoung');
+        }
+      });
+  };
+
   const handleInput = e => {
+    e.preventDefault();
     const { name, value } = e.target;
     setInputValue({ ...inputValue, [name]: value });
   };
-  const inputEnter = e => {
-    if (e.code === 'Enter') {
-      navigate('/main-jiyoung');
-    }
-  };
+
+  // fetch시 중복 클릭 방지
+  // const inputEnter = e => {
+  //   if (e.code === 'Enter' && validator === true) {
+  //     singIn();
+  //   }
+  // };
+
   const validator =
     inputValue.id &&
     inputValue.id.includes('@') &&
@@ -29,7 +60,11 @@ function Loginjiyoung() {
       <div className="loginContainer">
         <div className="inputContainer">
           <div className="loginLogo">westagram</div>
-          <form>
+          <form
+            onSubmit={e => {
+              e.preventDefault();
+            }}
+          >
             <input
               onChange={handleInput}
               type="text"
@@ -38,7 +73,7 @@ function Loginjiyoung() {
             />
             <input
               onChange={handleInput}
-              onKeyDown={inputEnter}
+              // onKeyDown={inputEnter}
               type="password"
               name="pw"
               placeholder="비밀번호"
@@ -46,7 +81,7 @@ function Loginjiyoung() {
             <button
               onClick={() => {
                 validator
-                  ? navigate('/main-jiyoung')
+                  ? singIn()
                   : alert('아이디와 비밀번호를 확인해주세요');
               }}
               className="loginBtn"

@@ -1,31 +1,32 @@
+import React from 'react';
+import { useState } from 'react';
+import { useEffect } from 'react';
+
 const SearchId = ({ searchInput }) => {
-  const idData = [
-    { id: 'zhwltlr', profile: '/images/img.jiyoungpark/zhwltlr.png' },
-    { id: 'jyp_0808', profile: '/images/img.jiyoungpark/flower.jpg' },
-    { id: 'jyinfo_music', profile: '/images/img.jiyoungpark/song.jpg' },
-    { id: 'jyinfo_dog', profile: '/images/img.jiyoungpark/dog.jpg' },
-    { id: 'jyinfo_movie', profile: '/images/img.jiyoungpark/movie.jpg' },
-    { id: 'christmas_soon', profile: '/images/img.jiyoungpark/christmas.jpg' },
-    { id: 'gonnatrip', profile: '/images/img.jiyoungpark/trip.jpg' },
-    { id: 'jyfav_conan', profile: '/images/img.jiyoungpark/detective.png' },
-    { id: 'jyfav_itzy', profile: '/images/img.jiyoungpark/itzy.jpg' },
-    { id: 'jyfav_baseball', profile: '/images/img.jiyoungpark/baseball.png' },
-  ];
-  return (
-    <>
-      {idData.map((el, i) => {
-        if (searchInput && el.id.includes(searchInput)) {
+  const [feedData, setFeedData] = useState([]);
+
+  useEffect(() => {
+    fetch('/data/parkjiyoung/feedData.json')
+      .then(response => response.json())
+      .then(result => setFeedData(result));
+  }, []);
+
+  const searchIdData = feedData.filter(el => el.username.includes(searchInput));
+
+  if (searchInput.length > 0 && searchIdData.length > 0) {
+    return (
+      <div className="filterBox">
+        {searchIdData.map((el, i) => {
           return (
             <div key={i} className="filterId">
-              <img src={el.profile} alt="img" className="filterImg" />
-              {el.id}
+              <img src={el.profileimg} alt="img" className="filterImg" />
+              {el.username}
             </div>
           );
-        }
-        return null;
-      })}
-    </>
-  );
+        })}
+      </div>
+    );
+  }
 };
 
 export default SearchId;

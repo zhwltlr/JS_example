@@ -18,11 +18,9 @@ const Feed = ({ feedinfo }) => {
     setComment('');
   };
   const commentEnter = e => {
-    if (comment && e.code === 'Enter') {
-      if (e.nativeEvent.isComposing === false) {
-        //한글 두번입력 방지
-        pushComment();
-      }
+    if (comment && e.code === 'Enter' && e.nativeEvent.isComposing === false) {
+      //한글 두번입력 방지
+      pushComment();
     }
   };
   // 댓글 삭제
