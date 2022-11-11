@@ -9,7 +9,7 @@ function Loginjiyoung() {
     pw: '',
   });
 
-  const singIn = () => {
+  const signIn = () => {
     fetch('http://10.58.52.105:3000/auth/signin', {
       method: 'POST',
       headers: {
@@ -39,21 +39,15 @@ function Loginjiyoung() {
   const handleInput = e => {
     e.preventDefault();
     const { name, value } = e.target;
-    setInputValue({ ...inputValue, [name]: value });
+    setInputValue(prev => ({ ...prev, [name]: value }));
   };
 
-  // fetch시 중복 클릭 방지
-  // const inputEnter = e => {
-  //   if (e.code === 'Enter' && validator === true) {
-  //     singIn();
-  //   }
-  // };
+  const checkValidation = () => {
+    validator ? signIn() : alert('아이디와 비밀번호를 확인해주세요');
+  };
 
-  const validator =
-    inputValue.id &&
-    inputValue.id.includes('@') &&
-    inputValue.pw &&
-    inputValue.pw.length >= 5;
+  const { id, pw } = inputValue;
+  const validator = id.includes('@') && pw.length >= 5;
 
   return (
     <main className="login">
@@ -73,19 +67,14 @@ function Loginjiyoung() {
             />
             <input
               onChange={handleInput}
-              // onKeyDown={inputEnter}
               type="password"
               name="pw"
               placeholder="비밀번호"
             />
             <button
-              onClick={() => {
-                validator
-                  ? singIn()
-                  : alert('아이디와 비밀번호를 확인해주세요');
-              }}
+              onClick={checkValidation}
               className="loginBtn"
-              disabled={!validator ? true : false}
+              disabled={!validator}
             >
               로그인
             </button>

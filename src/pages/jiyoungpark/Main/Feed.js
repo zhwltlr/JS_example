@@ -10,11 +10,8 @@ const Feed = ({ feedinfo }) => {
   const newComment = e => {
     setComment(e.target.value);
   };
-  // 댓글 게시
   const pushComment = () => {
-    let copyComment = [...commentArr];
-    copyComment.push(comment);
-    setCommentArr(copyComment);
+    setCommentArr([...commentArr, comment]);
     setComment('');
   };
   const commentEnter = e => {
@@ -23,7 +20,6 @@ const Feed = ({ feedinfo }) => {
       pushComment();
     }
   };
-  // 댓글 삭제
   const handleDelete = i => {
     return () => {
       let copy = [...commentArr];
