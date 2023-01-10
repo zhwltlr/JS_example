@@ -9,3 +9,6 @@
 1. 시작전 3초동안 안내 멘트 나오게 하기</br>
 2. 게임 끝났을 때 게임종료 사인 보내주기 </br>
 clearinterval로 코드 개선하기
+
+구현 페이지
+http://vyoungv7340.dothome.co.kr/enemyRain/
