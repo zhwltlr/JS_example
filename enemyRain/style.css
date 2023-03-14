@@ -1,0 +1,54 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+
+.bg-img{
+    width: 800px;
+    height: 600px;
+    position: relative;
+    background: url(images/bg.png) no-repeat center/cover;
+    overflow: hidden;
+}
+.wrap{
+    width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+.btn-lg{
+    width: 200px;
+    margin: 30px auto;
+}
+.hero{
+    background-image: url(images/hero.png);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 36px;
+    height: 54px;
+}
+/* 이동시 옆모습 구현 */
+.left{
+    background-image: url(images/hero.png);
+    background-position: 70px;
+}
+.right{
+    background-image: url(images/hero.png);
+    background-position: 36px;
+}
+
+
+
+
+/* ghost */
+.ghost{
+    background-image: url(images/enemy.png);
+    position: absolute;
+    width: 36px;
+    height: 54px;
+    top: 0;
+    display: inline-block;
+    /* transition: all 1s; */
+    margin-top: -54px;
+}
+.death{
+    background-position: 45px;
+}
