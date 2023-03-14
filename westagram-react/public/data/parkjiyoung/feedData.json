@@ -1,0 +1,90 @@
+[
+  {
+    "id": 1,
+    "username": "zhwltlr",
+    "profileimg": "/images/img.jiyoungpark/zhwltlr.png",
+    "mainimg": "/images/img.jiyoungpark/hous.jpg",
+    "text": "오늘도 좋은 하루~^^",
+    "postdate": "42분전",
+    "likeuser": "jyp_0808",
+    "likeuserimg": "/images/img.jiyoungpark/flower.jpg",
+    "likenum": "10"
+  },
+  {
+    "id": 2,
+    "username": "jyinfo_music",
+    "profileimg": "/images/img.jiyoungpark/song.jpg",
+    "mainimg": "/images/img.jiyoungpark/maple.jpg",
+    "text": "가을 단풍 예쁘다...^^",
+    "postdate": "3시간 전",
+    "likeuser": "jyfav_conan",
+    "likeuserimg": "/images/img.jiyoungpark/dog.jpg",
+    "likenum": "95"
+  },
+  {
+    "id": 3,
+    "username": "samsunglionking",
+    "profileimg": "/images/img.jiyoungpark/baseball.png",
+    "mainimg": "/images/img.jiyoungpark/baseball2.jpg",
+    "text": "이제 매일 야없날.. 어떻게 버텨..?",
+    "postdate": "2시간 전",
+    "likeuser": "jyfav_itzy",
+    "likeuserimg": "/images/img.jiyoungpark/itzy.jpg",
+    "likenum": "78"
+  },
+  {
+    "id": 4,
+    "username": "alpsprotector",
+    "profileimg": "/images/img.jiyoungpark/coding.jpg",
+    "mainimg": "/images/img.jiyoungpark/switzerland.jpg",
+    "text": "오랜만에 뒷산 등산...^^",
+    "postdate": "3시간 전",
+    "likeuser": "jyinfo_song",
+    "likeuserimg": "/images/img.jiyoungpark/song.jpg",
+    "likenum": "19"
+  },
+  {
+    "id": 5,
+    "username": "ihavenoid",
+    "profileimg": "/images/img.jiyoungpark/maple.jpg",
+    "mainimg": "/images/img.jiyoungpark/christmas.jpg",
+    "text": "크리스마스도 금방 오겠네~~^^*",
+    "postdate": "9시간 전",
+    "likeuser": "zhwltlr",
+    "likeuserimg": "/images/img.jiyoungpark/zhwltlr.png",
+    "likenum": "28"
+  },
+  {
+    "id": 6,
+    "username": "jyinfo_dog",
+    "profileimg": "/images/img.jiyoungpark/dog.jpg",
+    "mainimg": "/images/img.jiyoungpark/mask.jpg",
+    "text": "요즘 미세먼지가 심하니 다들 조심...^^",
+    "postdate": "17시간 전",
+    "likeuser": "jyp_0808",
+    "likeuserimg": "/images/img.jiyoungpark/flower.jpg",
+    "likenum": "36"
+  },
+  {
+    "id": 7,
+    "username": "jyfav_itzy",
+    "profileimg": "/images/img.jiyoungpark/itzy.jpg",
+    "mainimg": "/images/img.jiyoungpark/concert.jpg",
+    "text": "연말 콘서트 한 번 가보고 싶다...",
+    "postdate": "11시간 전",
+    "likeuser": "jyinfo_movie",
+    "likeuserimg": "/images/img.jiyoungpark/movie.jpg",
+    "likenum": "212"
+  },
+  {
+    "id": 8,
+    "username": "jyfav_conan",
+    "profileimg": "/images/img.jiyoungpark/detective.png",
+    "mainimg": "/images/img.jiyoungpark/climbing.jpg",
+    "text": "오랜만에 클라이밍 했는데 여전히 좋다!!",
+    "postdate": "7시간 전",
+    "likeuser": "zheldwoddl",
+    "likeuserimg": "/images/img.jiyoungpark/hous.jpg",
+    "likenum": "36"
+  }
+]
